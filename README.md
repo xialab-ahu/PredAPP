@@ -1,5 +1,5 @@
 # PredAPP source code
-Url: http://PredAPP.xialab.info
+Web server: http://PredAPP.xialab.info
 
 Email: [jfxia@ahu.edu.cn](mailto:jfxia@ahu.edu.cn)
 

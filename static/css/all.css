@@ -1,0 +1,186 @@
+
+.layui-container {
+	min-width: 1280px;
+	/*border: 1px solid;*/
+	padding: 2px;
+}
+
+#banner {
+	background: url(../img/bg2.png);
+	height: 200px;
+	background-size: cover;
+	text-align: center;
+}
+
+#ahu {
+	backgroud: url(../img/logo.png);
+}
+
+
+
+.contentfont {
+	font-family: "Times New Roman";
+	font-size: 30px;
+}
+
+
+.nav-fontsize {
+	font-size: 3px;
+}
+
+
+.nav-color {
+	color: #ffffff;
+}
+
+.fa-bar-chart-o {
+	content: "\f080";
+}
+
+/*#bar {*/
+/*	border: 1px solid;*/
+/*	 margin: 1px; */
+/*}*/
+
+/*#navbar {*/
+/*	!*text-align: center;*!*/
+/*	margin:0px;*/
+/*	margin-left: 10%;*/
+/*}*/
+
+.layui-nav-item {
+	line-height: 40px;
+}
+
+/*.layui-nav {*/
+/*	background-color: #fff;*/
+/*}*/
+
+/*.layui-nav .layui-nav-item a {*/
+/*	color: #333;*/
+/*	font-size:20px;*/
+/*}*/
+
+/*.layui-nav .layui-nav-item a:hover,*/
+/*.layui-nav .layui-this a {*/
+/*	color: #000;*/
+/*}*/
+
+#bodyer {
+	background-color: #fff;
+	padding: 1px;
+}
+#bodyer1{
+	background-color: #fff;margin: 3px;
+}
+#footer {
+	/* background-color: #666666; */
+	max-width: 1366px;
+	width: 61.8%;
+	min-width: 960px;
+	/* position:fixed; */
+	bottom: 0px;
+	left: 0px;
+	color: rgba(0, 0, 0, 0.71);
+	font-size: 90%;
+	margin: 20px auto;
+}
+
+.link,
+.copyright,
+.use {
+	margin: 0 auto;
+	text-align: center;
+}
+#overview,#statistic{
+	margin-top:20px;
+	margin-bottom:20px;
+}
+#overview fieldset{
+	margin-bottom:5px;margin-top:20px;
+}
+#statistic fieldset{
+	margin-bottom:5px;margin-top:20px;
+}
+#statistic img,table{
+	width: 95%;
+}
+
+
+
+#browsefield{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+#browsefield p{
+	font-size:1.1em;
+}
+#browsefield blockquote
+{
+	font-size: 1.3em;
+}
+.browsebtn{
+	margin: 5px;
+}
+#browsefield fieldset{
+	margin-top: 6px;
+	margin-bottom: 2px;
+}
+#browsefield legend
+{
+	font-size:1.2em;
+}
+#select label{
+	width:180px;
+	
+}
+#select #AND{
+	width:70px;
+	margin-right:-1px;
+	
+}
+#select .layui-input-block{
+	margin-left:250px;
+}
+
+#simplesearch{
+	margin-top:20px;
+	margin-bottom:20px;
+}
+#advancesearch{
+	/* margin-top:20px; */
+	margin-bottom:20px;
+}
+
+.layui-text{
+	color:#333;
+}
+
+.imgtext{
+	padding-bottom:20px;
+	padding-top:20px;
+}
+
+
+#container{
+	margin:10px;
+}
+/* .layui-colla-title{
+	background-color:inherit;
+}
+.layui-colla-item{
+	border-color:inherit;
+} */
+
+#ppp{
+	margin-left: 2em;
+}
+.ppp{
+	margin-left: 2em;
+}
+#pppp{
+	margin-left: 4em;
+}
+.pppp{
+	margin-left: 4em;
+}

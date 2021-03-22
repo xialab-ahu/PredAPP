@@ -1,0 +1,174 @@
+{% extends 'nav_all.html' %}
+{% block page_name %}Home{% endblock %}
+
+{% block head_script %}
+    	<script>
+
+		// //检查序列的最大长度
+		// function maxchecking() {
+		// 	var submitForm = document.getElementById('submitForm');
+		// 	var IDsequences = document.getElementById('IDsequences');
+
+		// 	if (IDsequences.value.length-IDsequences.value.replace(/>/g,'').length<=100){
+		// 		submitForm.submit();
+		// 	}else {
+		// 		layer.msg("Error! Enter up to 100 peptides.");
+		// 	}
+		// }
+
+		//检查序列
+		function check_task(sequences){
+			var sequences_array = sequences.split('>');
+			var sequences_length_dict = new Array();
+
+			// 最大允许提交1000条序列
+			if (sequences_array.length - 1 > 1000) {
+				alert("The maximum number of sequence is 1000 in one submission!");
+				return false;
+				}
+
+			var min_sequence_length = 1000000
+			var max_sequence_length = 0
+
+			for (i in sequences_array){
+				if (sequences_array[i] != ""){
+					var tmp_array = sequences_array[i].split('\n');
+					tmp_array.shift()
+					tmp_sequence = tmp_array.join('');
+					tmp_sequence = tmp_sequence.replace(/\s/g, "");
+					sequences_length_dict[tmp_sequence.length] = 0;
+					//检测非法字符
+					if (tmp_sequence.search(/[^ACDEFGHIKLMNPQRSTVWY-]/i) != -1) {
+						alert("Illegal character(s) are included in the FASTA sequence.");
+						return false;
+						}
+					if (tmp_sequence.length < min_sequence_length){
+						min_sequence_length = tmp_sequence.length;
+						}
+					if (tmp_sequence.length > max_sequence_length){
+						max_sequence_length = tmp_sequence.length;
+					}
+				}
+			}
+
+			//最大序列长和最小序列长度
+			if (min_sequence_length < 5){
+				alert("Error! The minmum sequence length should be larger than 5");
+				return false;
+			}
+			if (max_sequence_length > 300){
+				alert("Error! The maxmum sequence length should be shorter than 300");
+				return false;
+			}
+			return true;
+		}
+		//增加示例
+		function display_example(){
+			var example = ">seq1\n\
+KWKSFLKTFKSAVKTVLHTALKAISS\n\
+>seq2\n\
+GLLCYCRKGHCKRGERVRGTCTCGIRFLYCCPRR\n\
+>seq3\n\
+DCGTIWHYCGTDQSECCEGWKCSRQLCKYVIDW\n\
+>seq4\n\
+PGAGSQEERMQGQMEGQDFSHEERFLSMVRE\n\
+>seq5\n\
+DFASCHTNGGICLPNRCPGHMIQIGICFRPRVKCCRSW\n\
+>seq6\n\
+MFTNSIKNLIIYLMPLMVTLMLLSVSFVDAGKKPSGPNPGGNN\n\
+>seq7\n\
+GDPCCRNCKFLSPGTICKKARGDDMNDYCTGISSDCPRNPWKD\n\
+>seq8\n\
+FFSLIPSLVGGLISAFK\n\
+>seq9\n\
+GGARAFNGAEETLLNVANLA\n\
+>seq10\n\
+MQPITTASTQATQKDKSSEKKDNYIIKGLFWDPACVIA"
+			document.getElementById('IDsequences').value = example;
+		}
+
+		// 检查是输入还是上传文件
+		function check_sequence(){
+			thisform = document.submitForm;
+			{#var sequences = document.getElementById("IDsequences").value;.#}
+            var seqs = document.getElementById('IDsequences');
+            sequences = seqs.value;
+			//输入框中的内容优先
+			if (sequences == ""){
+				var objFile = document.getElementById("file");
+				if (objFile.value == ""){
+					alert("Please paste the sequences in the TEXT area or upload a file!");
+					}
+				//将上传的文件转化成sequences
+				var files = $('#file').prop('files')[0];
+				var reader = new FileReader();
+				reader.readAsText(files, "UTF-8");
+				reader.onload = function(evt){
+					//var fileString = evt.target.result;
+					seqs.value = evt.target.result;
+					if (check_task(seqs.value)){
+					thisform.submit();
+					}
+        		}
+			}
+			else{
+				if (check_task(sequences)){
+					thisform.submit();
+				}
+
+			}
+		}
+	</script>
+{% endblock %}
+
+{% block body_part %}
+<div class="container" style="text-align: justify;">
+    <div class="row">
+        <div class="col-xs-12 co-sm-12 col-md-12 col-lg-12">
+            <fieldset class="bootstrap-elem-field bootstrap-field-title">
+                <legend><i>Job Start</i></legend>
+                <div class="layui-text"  style="text-align:justify;margin:10px 0; font-size: 18px;">
+                  <span class="layui-badge-dot layui-bg-black"></span> <font size="4" >Input  sequence (<a href="#"  onclick="display_example()"><font color="green">Example</font></a>)</font>
+                  <br>
+                  <font color="red"><font size="3">*</font>The sequences must be in <a href="https://en.wikipedia.org/wiki/FASTA_format"><font color="green">FASTA</font></a> format.The sequence length should be between 5 and 150.</font>
+                </div>
+                <form action="Results" id="submitForm" name="submitForm" method = "post" target="_blank">
+                    {{ form.sequences }}
+                  <br>
+                    <br>
+                  <font class="layui-text">Or upload a file:</font>
+                    {{ form.file }}
+                            {% for message in form.file.errors %}
+                            <small class="error">{{ message }}</small>
+                            {% endfor %}
+                  <br><br>
+                  <span class="layui-badge-dot layui-bg-black"></span> <font size="4" >Input your email address </font>	<font><font size="3">*</font>optional</font>
+
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <br>
+                        <div class="layui-input-block">
+                            {{ form.email }}
+                             {% for message1 in form.email.errors %}
+                            <small class="error">{{ message1 }}</small>
+                            {% endfor %}
+                        </div>
+                        <div class="layui-inline"></div>
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <input type="button" id="submitBtn" class="layui-btn" onclick="check_sequence()" lay-submit lay-filter="*" value="Submit">
+
+                            <button type="reset" class="layui-btn layui-btn-primary" lay-filter="reset" id="reset" onclick="resetForm()">Reset</button>
+                        </div>
+                </div>
+
+                </form>
+            </fieldset>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

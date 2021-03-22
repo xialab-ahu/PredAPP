@@ -1,0 +1,202 @@
+{% extends 'nav_only_header.html' %}
+{% block page_name %}PredAPP{% endblock %}
+
+
+{% block body_part %}
+    {#第一段#}
+    <div class="container" style="text-align: justify;">
+        <div class="row">
+            <div class="col-xs-12 co-sm-12 col-md-12 col-lg-12">
+                <div>
+                    <legend>
+                        <i>Welcome to PredAPP</i>
+                    </legend>
+{#                    <legend style="text-indent: 0em; font-family: Times New Roman; font-size: 25px;">#}
+{#                        Welcome to PredAPP#}
+{#                    </legend>#}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <p class="col-xs-12 co-sm-12 col-md-12 col-lg-12"
+               style="text-indent: 0em;font-size: 18px;">
+               PredAPP is a web server providing users an effective identification of antiparasitic peptides (APPs) .
+            </p>
+        </div>
+        </br>
+    </div>
+
+
+    {#第二段#}
+    <div class="container" style="text-align: justify;">
+        <div class="row">
+            <div class="col-xs-12 co-sm-12 col-md-12 col-lg-12">
+                <div>
+                    <legend><i>Overview</i></legend>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <p class="col-xs-12 co-sm-12 col-md-12 col-lg-12 my_p"
+               style="text-indent: 0em; font-size: 18px;">
+                Anti-parasitic peptides (APPs), are small peptides with a length of 5-50 amino acids and generally
+                derived from antimicrobial peptides (AMPs). APPs can disrupt the cell membrane of parasites or inhibit
+                reductase enzymes to kill the target organism. Therefore, APPs are regarded as important therapeutic
+                candidates for developing a new drug against parasitic diseases.
+            </p>
+            <p class="col-xs-12 co-sm-12 col-md-12 col-lg-12 my_p"
+               style="text-indent: 0em; font-size: 18px;">
+                <b>PredAPP</b> is a web application used to identify APPs. More specifically, we have developed a
+                predictor based on a two-layer stacking method. It shows superior results in independent test set.
+            </p>
+        </div>
+        </br>
+    </div>
+
+
+    {#轮播#}
+
+    {#    <div class="container" style="text-align: center; background-color: blue;">#}
+    {#        <div class="row" style="text-align: center">#}
+    {#            <div class="carousel slide" id="slidershow" data-ride="carousel" data-interval="2000">#}
+    {#                <div carousel-item="">#}
+    {#                    <div style="position:relative;">#}
+    {#                        <img src="{{ url_for('static',filename='img/leishman-apps.png') }}" style="max-height:600px"/>#}
+    {#                        <div style="position:absolute; z-index:2; bottom:20px; left: 40px; font-size: 20px">The activity#}
+    {#                            of#}
+    {#                            some APPs on specific stages of the life cycles of Leishmania#}
+    {#                        </div>#}
+    {#                    </div>#}
+    {#                    <div style="position:relative;">#}
+    {#                        <img src="{{ url_for('static',filename='img/APPpred_flowchart.png') }}"#}
+    {#                             style="max-height:600px"/>#}
+    {#                        <div style="position:absolute; z-index:2; bottom:20px; left: 40px; font-size: 20px">The#}
+    {#                            flowchart of#}
+    {#                            APPpred#}
+    {#                        </div>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {#            </div>#}
+    {#        </div>#}
+    {#        </br>#}
+    {#    </div>#}
+
+
+
+    <!-- <div class="container" style="text-align: center;">
+        <div class="row" style="text-align: center">
+            <div class="layui-carousel" id="test2" align="center">
+                <div carousel-item="">
+                    <div style="position:relative;">
+                        <img src="{{ url_for('static',filename='img/leishman-apps.png') }}" style="max-height:600px"/>
+                        <div style="position:absolute; z-index:2; bottom:20px; left: 40px; font-size: 20px">
+                            The activity of some APPs on specific stages of the life cycles of Leishmania
+                        </div>
+                    </div>
+                    <div style="position:relative;">
+                        <img src="{{ url_for('static',filename='img/APPpred_flowchart1.png') }}"
+                             style="max-height:600px"/>
+                        <div style="position:absolute; z-index:2; bottom:20px; left: 40px; font-size: 20px">The
+                            flowchart of PredAPP
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </br>
+    </div> -->
+
+    <div class="container" style="text-align: center;">
+        <div class="row" style="text-align: center">
+                        <img src="{{ url_for('static',filename='img/APPpred_flowchart.jpg') }}"
+                             style="max-height:750px"/>
+                        <div style="font-size: 18px">The
+                            flowchart of PredAPP
+                        </div>
+                    </div>
+
+        </br>
+    </div>
+
+
+    {#引用#}
+    <div class="container" style="text-align: justify;">
+        <div class="row">
+            <div class="col-xs-12 co-sm-12 col-md-12 col-lg-12">
+                <div>
+                    <legend><i>Citation</i></legend>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <p class="col-xs-12 co-sm-12 col-md-12 col-lg-12" style="font-size: 18px;">
+                <b>PredAPP: Predicting Anti-parasitic Peptides with Under sampling and Ensemble Approaches</b>
+            </p>
+        </div>
+        </br>
+    </div>
+
+
+    <!-- <div style="height: 200px;"></div> -->
+
+    <footer class="footer">
+        <div class="panel-footer" style="width: 100%; overflow: hidden; height: 120px;">
+    {#    <div class="container">#}
+            <hr style="border: 1px solid #000000;">
+            <div>
+                <div class="row-sm-4 col-md-4 col-lg-4" style="text-align: right;">
+                    {#                <a href="http://en.ahu.edu.cn" target="_blank">#}
+                    {#                    <img src="{{ url_for('static', filename='img/ahu.png') }}" style="height: 20px">#}
+                    {#                </a>#}
+                    <a href="http://en.ahu.edu.cn" target="_blank">
+                        <img src="/PredAPP/img/logo.png" alt="ahu" height="55px">
+                    </a>
+                </div>
+                <div class="row-sm-4 col-md-4 col-lg-4" style="text-align: center; color: gray">
+                    <ul>
+                        <!-- <li>
+                            <a class="ow text" href="http://bioinfo.ahu.edu.cn" target="_blank" class="text">Bioinfo Lab</a>
+                        </li> -->
+                        <li style="font-size: 16px;">
+                            <a class="ow" href="http://bioinfo.ahu.edu.cn:8080/dbCPG/index.jsp" target="_blank">dbCPG</a>
+                        </li>
+                        <li style="font-size: 16px;">
+                            <a class="ow" href="http://bioinfo.ahu.edu.cn:8080/dbDSM/index.jsp" target="_blank">dbDSM</a>
+                        </li>
+                        <li style="font-size: 16px;">
+                            <a class="ow" href="http://bioinfo.ahu.edu.cn:8080/Melanoma/index.jsp"
+                               target="_blank">Melanoma</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row-sm-4 col-md-4 col-lg-4 " style="text-align: left; font-size: 16px;">
+                    <a class="ow" href="http://en.ahu.edu.cn" target="_blank">AnHui University</a> ©All Rights Reserved.
+                    </br>
+                    <a class="ow" href="https://beian.miit.gov.cn/" target="_blank">皖ICP备20012750号-1</a>
+                </div>
+            </div>
+    {#    </div>#}
+    </div>
+    </footer>
+
+{% endblock %}
+
+
+{% block body_script %}
+    <!--轮播的js处理部分-->
+    <!-- <script>
+        layui.use(['carousel', 'form'], function () {
+            var carousel = layui.carousel
+                , form = layui.form;
+            //改变下时间间隔、动画类型、高度
+            carousel.render({
+                elem: '#test2'
+                , interval: 7200
+                , height: '660px'
+                , width: '850px'
+                , align: 'center'
+            });
+
+        });
+    </script> -->
+{% endblock %}

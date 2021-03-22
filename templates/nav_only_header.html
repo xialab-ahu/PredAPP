@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html">
+    <title>{% block page_name %}{% endblock %} - PredAPP</title>
+    {#引入css#}
+
+    <link rel="stylesheet" href="/PredAPP/layui/css/layui.css">
+    <link rel="stylesheet" href="/PredAPP/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/PredAPP/bootstrap/css/bootstrap-theme.css">
+    {#引入自己的css#}
+    <link rel="stylesheet" href="/PredAPP/css/all.css">
+    {#在flask中插入各页面的标题内容#}
+    {% block head_script %}
+    {% endblock %}
+
+</head>
+<body>
+{#引入js#}
+{#<script src="../static/layui/layui.js"></script>#}
+{#<script src="../static/js/jquery-1.9.1.min.js"></script>#}
+{#<script src="../static/js/jquery-1.12.4.js"></script>#}
+<script src="/PredAPP/layui/layui.js"></script>
+<script src="/PredAPP/js/jquery-1.9.1.min.js"></script>
+<script src="/PredAPP/js/jquery-1.12.4.js"></script>
+
+
+<!-- 以下是头部分的内容 -->
+<div class="bootstrap-container">
+    <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #1B6AAB;" id="mainNav" role="navigation">
+        <div class="container-fluid" style="background-color: #1B6AAB; height: 70px">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#" style="color: #ffffff;">
+                    <h4 style="font-size:25px;">
+                    <span>
+                        <strong>PredAPP</strong>
+                    </span>
+                    </h4>
+
+                </a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="layui-nav-item">
+                    <a href="/" style="color: #ffffff;">
+                    <span>
+                        <i class="glyphicon glyphicon-home" style="font-size: 25px; "> Home</i>
+                    </span>
+                    </a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="/Help" style="color: #ffffff;">
+                        <i class="glyphicon glyphicon-tags" style="font-size: 25px">
+                            <span>Help</span>
+                        </i>
+                    </a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="/RunClassifier" style="color: #ffffff;">
+                        <i class="glyphicon glyphicon-play" style="font-size: 25px">
+                            <span>Run</span>
+                        </i>
+                    </a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="/Download" style="color: #ffffff;">
+                        <i class="glyphicon glyphicon-download-alt" style="font-size: 25px"> Download</i>
+                    </a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="/Contact" style="color: #ffffff;">
+                        <span>
+                            <i class="glyphicon glyphicon-send" style="font-size: 25px"> Contact</i>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="">
+        <div class="">
+            <!-- 各页面主体内容 -->
+            {% block body_part %}
+            {% endblock %}
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- 以下是脚部分的内容 -->
+
+
+
+
+
+{% block body_script %}
+{% endblock %}
+
+
+</body>
+</html>

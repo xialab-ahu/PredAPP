@@ -1,0 +1,30 @@
+{% extends 'nav_all.html' %}
+{% block page_name %}Download{% endblock %}
+
+{% block body_part %}
+    <div style="height: 30px;"></div>
+
+    <div class="container">
+        <div class="col-xs-12 co-sm-12 col-md-12 col-lg-12">
+            <fieldset class="bootstrap-elem-field bootstrap-field-title">
+                <legend><i>Download</i></legend>
+            </fieldset>
+            <div class="layui-text" style="text-align:justify;margin:10px 0">
+                <h3>The filtered benchmark datasets are available here 
+                    <a href="/datasets/datasets.zip">
+                    <font color="green">PredAPP_benchmark_datasets.zip</font></a></h3>
+            </div>
+            <br>
+            <br>
+            <fieldset class="bootstrap-elem-field bootstrap-field-title">
+                <legend><i>General annoucement</i></legend>
+            </fieldset>
+            <div class="layui-text" style="text-align:justify;margin:10px 0">
+                <h3> All the files are free to academic researchers worldwide. Not for profit purposes.<br/>
+                    If you have any problems with the server, please
+                     <a href="/Contact"><font color="green">contact us</font></a>
+                </h3>
+            </div>
+        </div>
+    </div>
+{% endblock %}

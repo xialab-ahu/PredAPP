@@ -1,0 +1,108 @@
+{% extends 'nav_all.html' %}
+{% block page_name %}Help{% endblock %}
+
+
+{% block body_part %}
+    {#第一部分#}
+    <div class="container" style="text-align: justify">
+        <div class="row">
+            <div class="col-xs-12 co-sm-12 col-md-12 col-lg-12">
+                <div>
+                    <legend>
+                        <i>Web Browser Requirements </i>
+                    </legend>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <p class="col-xs-12 co-sm-12 col-md-12 col-lg-12" style="text-indent: 0em;font-size: 18px;">
+                PredAPP requires a modern web browser with JavaScript and cookies enabled. To view the complex details, pop-ups must not be blocked. The following browsers have been thoroughly tested with PredAPP:
+            </p>
+            <ul style="text-indent: 5em; list-style-type: disc;">
+                <li>
+                    Mozilla Firefox, version 57 or above
+                </li>
+                <li>
+                    Internet Explorer, versions 11 or above
+                </li>
+                <li>
+                    Chrome, version 70 or above
+                </li>
+            </ul>
+            <p class="col-xs-12 co-sm-12 col-md-12 col-lg-12" style="text-indent: 0em;font-size: 18px;">
+                The latest version of Firefox and Chrome is recommended for visualization.
+            </p>
+        </div>
+
+        </br>
+    </div>
+
+
+{#    第二部分#}
+    <div class="container" style="text-align: justify">
+        <div class="row">
+            <div class="col-xs-12 co-sm-12 col-md-12 col-lg-12">
+                <div>
+                    <legend>
+                        <i>Usage</i>
+                    </legend>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <ol style=" list-style-type: none;">
+                <p class="col-xs-12 co-sm-12 col-md-12 col-lg-12" style="font-size: 18px;">1.Input</p>
+                <li style="">
+                    <ol style=" list-style-type: none; text-indent: 5em;">
+                        <li>1). Two types of input formats are allowed for PredAPP： TXT (*.txt) or FASTA (*.fasta).</li>
+                        <li>2). Paste sequences or upload sequence file. </li>
+                        <li>3). email address are optional for users.</li>
+                        <p></p>
+                            <ul style=" list-style-type: disc;">
+                                <p>Notes:</p>
+                                <li>The sequence length should be between 5 and 150.</li>
+                                <li>PredAPP was designed to accept at most 2000 sequences at once.</li>
+                                <li>Sequence with illegal characters (BJOUXZ) is not allowed for prediction.</li>
+                            </ul>
+                    </ol>
+                    <br/>
+                    <img src="/PredAPP/img/job1.jpg" style="width: 750px; margin-left: 5em;">
+                </li>
+                <p></p>
+{#                    <li class="col-sm-offset-1 col-md-offset-1 col-lg-offset-1">#}
+                <p class="col-xs-12 co-sm-12 col-md-12 col-lg-12" style="font-size: 18px;">2.Output</p>
+                <li style="text-indent: 5em; list-style-type: none;">
+                    <div>
+                        The predicted results will be displayed in a table, and you will receive a email with the result as soon as possible. All prediction results can be download in csv form.
+                    </div>
+                    <div>
+                        If the sequence is predicted to be anti-parasitic peptide, it is marked as “APP”, otherwise it is marked as “non-APP” .
+                    </div>
+                    <br/>
+                    <img src="/PredAPP/img/job2.jpg" style="width: 750px; margin-left: 5em;">
+                </li>
+            </ol>
+        </div>
+    </div>
+
+
+{#    第三部分#}
+    <div class="container" style="text-align: justify">
+        <div class="row">
+            <div class="col-xs-12 co-sm-12 col-md-12 col-lg-12">
+                <div>
+                    <legend>
+                        <i>Version</i>
+                    </legend>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <p class="col-xs-12 co-sm-12 col-md-12 col-lg-12" style="text-indent: 0em;font-size: 18px;">
+                The current version 1.0 - Aug, 2020
+            </p>
+          </div>
+    </div>
+    
+
+{% endblock %}

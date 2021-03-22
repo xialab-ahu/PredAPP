@@ -1,0 +1,9 @@
+__pycache__/
+.idea/
+files/pred_result/*
+files/uploads/*
+envs/
+.htaccess
+.user.ini
+gunicorn.conf
+Dockerfile
